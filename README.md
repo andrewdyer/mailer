@@ -1,3 +1,5 @@
+![Mailer](http://public-assets.andrewdyer.rocks/images/covers/mailer.png)
+
 # Mailer
 
 A framework-agnostic PHP library for sending emails from Twig templates, with support for a swappable transport interface.
