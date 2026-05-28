@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace YourVendor\YourPackage;
+namespace AndrewDyer\Mailer;
 
 final class Example
 {
