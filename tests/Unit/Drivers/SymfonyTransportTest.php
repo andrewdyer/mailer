@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AndrewDyer\Mailer\Tests\Unit;
+namespace AndrewDyer\Mailer\Tests\Unit\Drivers;
 
 use AndrewDyer\Mailer\Drivers\SymfonyTransport;
 use AndrewDyer\Mailer\PreparedMessage;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AndrewDyer\Mailer\Tests\Unit;
+namespace AndrewDyer\Mailer\Tests\Unit\Values;
 
 use AndrewDyer\Mailer\Enums\Priority;
 use AndrewDyer\Mailer\Values\Address;
