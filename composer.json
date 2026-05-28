@@ -1,6 +1,6 @@
 {
   "name": "andrewdyer/mailer",
-  "description": "",
+  "description": "A framework-agnostic PHP library for sending emails from Twig templates, with support for a swappable transport interface",
   "type": "library",
   "license": "MIT",
   "autoload": {
