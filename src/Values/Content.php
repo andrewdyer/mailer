@@ -12,7 +12,7 @@ final readonly class Content
     /**
      * Creates a new Content.
      *
-     * @param string               $view The view template name.
+     * @param string $view The view template name.
      * @param array<string, mixed> $data The data to pass to the view template.
      */
     public function __construct(
