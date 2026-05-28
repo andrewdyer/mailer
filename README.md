@@ -105,39 +105,10 @@ $mailer = new Mailer(
 
 ### Sending a mailable
 
+Dispatch any `Mailable` instance via the `send()` method:
+
 ```php
 $mailer->send(new WelcomeMail($user));
-```
-
-### Setting a from address per mailable
-
-The `defaultFrom` address set on `Mailer` is used when the mailable's `envelope()` does not define one. To override it for a specific mailable, set `from` on the `Envelope`:
-
-```php
-public function envelope(): Envelope
-{
-    return new Envelope(
-        to:      new Address($this->user->email, $this->user->name),
-        subject: 'Welcome to the platform!',
-        from:    new Address('support@example.com', 'Support Team'),
-    );
-}
-```
-
-### Adding CC and BCC recipients
-
-```php
-use AndrewDyer\Mailer\Values\Address;
-
-public function envelope(): Envelope
-{
-    return new Envelope(
-        to:      new Address($this->user->email, $this->user->name),
-        subject: 'Welcome to the platform!',
-        cc:      [new Address('manager@example.com', 'Manager')],
-        bcc:     [new Address('archive@example.com')],
-    );
-}
 ```
 
 ### Attaching files
@@ -165,7 +136,60 @@ class InvoiceMail extends Mailable implements AttachableInterface
 }
 ```
 
+## Envelope
+
+A value object defining the routing and metadata for a message. Only `to` and `subject` are required — all other properties are optional and can be passed in any order using named arguments:
+
+```php
+use AndrewDyer\Mailer\Values\Envelope;
+use AndrewDyer\Mailer\Values\Address;
+use AndrewDyer\Mailer\Enums\Priority;
+
+new Envelope(
+    to:       new Address('recipient@example.com', 'Recipient'),
+    subject:  'Hello!',
+    from:     new Address('sender@example.com', 'Sender'),
+    cc:       [new Address('cc@example.com')],
+    bcc:      [new Address('bcc@example.com')],
+    replyTo:  new Address('reply@example.com'),
+    priority: Priority::Normal,
+);
+```
+
+### Setting a from address
+
+The `defaultFrom` address set on `Mailer` is used when `from` is omitted. Set it explicitly on the `Envelope` to override it for a specific mailable:
+
+```php
+public function envelope(): Envelope
+{
+    return new Envelope(
+        to:      new Address($this->user->email, $this->user->name),
+        subject: 'Welcome to the platform!',
+        from:    new Address('support@example.com', 'Support Team'),
+    );
+}
+```
+
+### Adding CC and BCC recipients
+
+Pass arrays of `Address` instances to `cc` and `bcc` on the `Envelope`:
+
+```php
+public function envelope(): Envelope
+{
+    return new Envelope(
+        to:      new Address($this->user->email, $this->user->name),
+        subject: 'Welcome to the platform!',
+        cc:      [new Address('manager@example.com', 'Manager')],
+        bcc:     [new Address('archive@example.com')],
+    );
+}
+```
+
 ### Setting priority
+
+Pass a `Priority` enum value to `priority` on the `Envelope`:
 
 ```php
 use AndrewDyer\Mailer\Enums\Priority;
@@ -190,7 +214,7 @@ A transport backed by [Symfony Mailer](https://symfony.com/doc/current/mailer.ht
 composer require symfony/mailer
 ```
 
-Instantiate the transport with a DSN string:
+Then instantiate the transport with a DSN string:
 
 ```php
 use AndrewDyer\Mailer\Drivers\SymfonyTransport;
@@ -221,26 +245,6 @@ class CustomTransport implements TransportInterface
         // Dispatch the message...
     }
 }
-```
-
-## Envelope
-
-A value object defining the routing and metadata for a message. All properties except `to` and `subject` are optional:
-
-```php
-use AndrewDyer\Mailer\Values\Envelope;
-use AndrewDyer\Mailer\Values\Address;
-use AndrewDyer\Mailer\Enums\Priority;
-
-new Envelope(
-    to:       new Address('recipient@example.com', 'Recipient'),
-    subject:  'Hello!',
-    from:     new Address('sender@example.com', 'Sender'),
-    cc:       [new Address('cc@example.com')],
-    bcc:      [new Address('bcc@example.com')],
-    replyTo:  new Address('reply@example.com'),
-    priority: Priority::Normal,
-);
 ```
 
 ## License
