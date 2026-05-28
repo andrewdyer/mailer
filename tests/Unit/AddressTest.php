@@ -49,7 +49,7 @@ final class AddressTest extends TestCase
     {
         $address = new Address('user@example.com');
 
-        $this->assertSame('user@example.com', (string) $address);
+        $this->assertSame('user@example.com', (string)$address);
     }
 
     /**
@@ -59,6 +59,6 @@ final class AddressTest extends TestCase
     {
         $address = new Address('user@example.com', 'John Doe');
 
-        $this->assertSame('"John Doe" <user@example.com>', (string) $address);
+        $this->assertSame('"John Doe" <user@example.com>', (string)$address);
     }
 }
