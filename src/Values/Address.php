@@ -13,7 +13,7 @@ final readonly class Address
      * Creates a new Address.
      *
      * @param string $email The email address.
-     * @param string $name  The display name.
+     * @param string $name The display name.
      */
     public function __construct(
         public string $email,
