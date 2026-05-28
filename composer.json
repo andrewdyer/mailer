@@ -2,6 +2,7 @@
   "name": "your-vendor/your-package",
   "description": "",
   "type": "library",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "AndrewDyer\\Mailer\\": "src/"
