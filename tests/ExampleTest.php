@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace YourVendor\YourPackage\Tests;
+namespace AndrewDyer\Mailer\Tests;
 
+use AndrewDyer\Mailer\Example;
 use PHPUnit\Framework\TestCase;
-use YourVendor\YourPackage\Example;
 
 class ExampleTest extends TestCase
 {

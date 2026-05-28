@@ -1,23 +1,29 @@
 {
-  "name": "your-vendor/your-package",
-  "description": "",
+  "name": "andrewdyer/mailer",
+  "description": "A framework-agnostic PHP library for sending emails from Twig templates, with support for a swappable transport interface",
   "type": "library",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
-      "YourVendor\\YourPackage\\": "src/"
+      "AndrewDyer\\Mailer\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "YourVendor\\YourPackage\\Tests\\": "tests/"
+      "AndrewDyer\\Mailer\\Tests\\": "tests/"
     }
   },
   "require": {
-    "php": "^8.3"
+    "php": "^8.3",
+    "twig/twig": "^3.27"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.75",
-    "phpunit/phpunit": "^10.5"
+    "phpunit/phpunit": "^10.5",
+    "symfony/mailer": "^7.4"
+  },
+  "suggest": {
+    "symfony/mailer": "Required to use SymfonyTransport (^7.4)"
   },
   "scripts": {
     "cs": "php-cs-fixer fix",
