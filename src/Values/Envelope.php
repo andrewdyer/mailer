@@ -17,8 +17,8 @@ final readonly class Envelope
      * @param Address $to The recipient address.
      * @param string $subject The message subject.
      * @param Address $from The sender address.
-     * @param array<Address> $cc The CC recipient addresses.
-     * @param array<Address> $bcc The BCC recipient addresses.
+     * @param list<Address> $cc The CC recipient addresses.
+     * @param list<Address> $bcc The BCC recipient addresses.
      * @param Address|null $replyTo The reply-to address.
      * @param Priority $priority The message priority.
      */
