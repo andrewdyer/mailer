@@ -45,10 +45,9 @@ final readonly class Mailer
     {
         $envelope = $this->resolveFrom($mailable->envelope());
 
-        $html = $this->twig->render(
-            $mailable->content()->view,
-            $mailable->content()->data,
-        );
+        $content = $mailable->content();
+
+        $html = $this->twig->render($content->view, $content->data);
 
         $attachments = $mailable instanceof AttachableInterface
             ? $mailable->attachments()
