@@ -11,6 +11,18 @@
   ],
   "type": "library",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrew Dyer",
+      "homepage": "https://andrewdyer.rocks",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/andrewdyer/mailer",
+  "support": {
+    "issues": "https://github.com/andrewdyer/mailer/issues",
+    "source": "https://github.com/andrewdyer/mailer"
+  },
   "autoload": {
     "psr-4": {
       "AndrewDyer\\Mailer\\": "src/"
