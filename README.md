@@ -1,15 +1,11 @@
-![Mailer](http://public-assets.andrewdyer.rocks/images/covers/mailer.png)
-
-<p align="center">
-  <a href="https://packagist.org/packages/andrewdyer/mailer"><img src="https://poser.pugx.org/andrewdyer/mailer/v/stable?style=for-the-badge" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/andrewdyer/mailer"><img src="https://poser.pugx.org/andrewdyer/mailer/downloads?style=for-the-badge" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/andrewdyer/mailer"><img src="https://poser.pugx.org/andrewdyer/mailer/license?style=for-the-badge" alt="License"></a>
-  <a href="https://packagist.org/packages/andrewdyer/mailer"><img src="https://poser.pugx.org/andrewdyer/mailer/require/php?style=for-the-badge" alt="PHP Version Required"></a>
-</p>
-
 # Mailer
 
 A framework-agnostic PHP library for sending emails from Twig templates, with support for a swappable transport interface.
+
+[![Latest Stable Version](http://poser.pugx.org/andrewdyer/mailer/v?style=flat-square)](https://packagist.org/packages/andrewdyer/mailer)
+[![Total Downloads](http://poser.pugx.org/andrewdyer/mailer/downloads?style=flat-square)](https://packagist.org/packages/andrewdyer/mailer)
+[![License](http://poser.pugx.org/andrewdyer/mailer/license?style=flat-square)](https://packagist.org/packages/andrewdyer/mailer)
+[![PHP Version Require](http://poser.pugx.org/andrewdyer/mailer/require/php?style=flat-square)](https://packagist.org/packages/andrewdyer/mailer)
 
 ## Introduction
 
