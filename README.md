@@ -1,6 +1,6 @@
 # Mailer
 
-A framework-agnostic PHP library for sending emails from Twig templates, with support for a swappable transport interface.
+A framework-agnostic library for sending emails from Twig templates, with support for a swappable transport interface.
 
 [![Latest Stable Version](http://poser.pugx.org/andrewdyer/mailer/v?style=flat-square)](https://packagist.org/packages/andrewdyer/mailer)
 [![Total Downloads](http://poser.pugx.org/andrewdyer/mailer/downloads?style=flat-square)](https://packagist.org/packages/andrewdyer/mailer)
@@ -9,7 +9,7 @@ A framework-agnostic PHP library for sending emails from Twig templates, with su
 
 ## Introduction
 
-This library provides an email delivery pipeline for PHP applications, rendering Twig templates to HTML and dispatching them through an extensible transport interface. A Symfony Mailer transport is included, with support for custom transports via a simple contract.
+This library renders Twig templates to HTML and dispatches them through an extensible, swappable transport interface, with a Symfony Mailer transport included out of the box. Custom transports can be introduced by implementing a simple contract, making it straightforward to adapt the delivery pipeline to different mailing backends or infrastructure requirements.
 
 ## Prerequisites
 
